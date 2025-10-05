@@ -22,6 +22,8 @@ python api.py
 ```
 Train the model
 
+Configure the api key and model name in the .env
+
 **API Usage:**
 ```bash
 curl -X POST http://localhost:5000/predict \
@@ -52,3 +54,5 @@ print(result['prediction'])  # CONFIRMED
 ---
 
 **Built for NASA Space Apps Challenge** 🚀
+
+Team OrbitCode
