@@ -20,6 +20,7 @@ python train_model.py
 # Start API server
 python api.py
 ```
+Train the model
 
 **API Usage:**
 ```bash
