@@ -20,21 +20,32 @@ python train_model.py
 # Start API server
 python api.py
 ```
-Train the model
-
-Configure the api key and model name in the .env
 
 **API Usage:**
 ```bash
 curl -X POST http://localhost:5000/predict \
   -H "Content-Type: application/json" \
-  -d '{"orbital_period": 3.52, "planet_radius": 15.5, "transit_depth": 0.014}'
+  -d '{
+    "orbital_period": 3.52,
+    "planet_radius": 15.5,
+    "transit_depth": 0.0144,
+    "transit_duration": 3.0,
+    "insolation_flux": 769.0,
+    "equilibrium_temp": 1467.0
+  }'
 ```
 
 **Python Usage:**
 ```python
 from utils import predict_single
-result = predict_single(orbital_period=3.52, planet_radius=15.5, transit_depth=0.014)
+result = predict_single(
+    orbital_period=3.52,
+    planet_radius=15.5,
+    transit_depth=0.0144,
+    transit_duration=3.0,
+    insolation_flux=769.0,
+    equilibrium_temp=1467.0
+)
 print(result['prediction'])  # CONFIRMED
 ```
 
@@ -54,5 +65,3 @@ print(result['prediction'])  # CONFIRMED
 ---
 
 **Built for NASA Space Apps Challenge** 🚀
-
-Team OrbitCode
